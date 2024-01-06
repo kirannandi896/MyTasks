@@ -3,8 +3,8 @@ package com.example.mytasks
 object DataObject {
     var listdata = mutableListOf<CardInfo>()
 
-    fun setData(title: String, priority: String) {
-        listdata.add(CardInfo(title, priority))
+    fun setData(title: String, priority: String, done: Boolean) {
+        listdata.add(CardInfo(title, priority, done))
     }
 
     fun getAllData(): List<CardInfo> {
@@ -24,11 +24,11 @@ object DataObject {
     }
 
 
-    fun updateData(pos:Int,title:String,priority:String)
+    fun updateData(pos:Int,title:String,priority:String,done:Boolean)
     {
         listdata[pos].title=title
         listdata[pos].priority=priority
-
+        listdata[pos].done=done
     }
 
 }

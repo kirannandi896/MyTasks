@@ -15,7 +15,7 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
+            applicationContext, myDatabase::class.java, "Tasks"
         ).build()
         GlobalScope.launch {
             DataObject.listdata = database.dao().getTasks() as MutableList<CardInfo>
@@ -23,7 +23,7 @@ class SplashScreen : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-        }, 3000)
+        }, 2000)
     }
 
 }

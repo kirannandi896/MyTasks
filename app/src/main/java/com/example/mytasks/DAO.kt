@@ -14,10 +14,11 @@ interface DAO {
     @Delete
     suspend fun deleteTask(entity: Entity)
 
-    @Query("Delete from to_do")
+    @Query("Delete from tasks")
     suspend fun deleteAll()
 
-    @Query("Select * from to_do")
+    @Query("Select * from tasks")
     suspend fun getTasks():List<CardInfo>
+
 
 }

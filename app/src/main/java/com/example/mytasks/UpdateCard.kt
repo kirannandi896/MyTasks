@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import androidx.room.Room
 import kotlinx.coroutines.GlobalScope
@@ -15,7 +16,7 @@ class UpdateCard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_card)
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
+            applicationContext, myDatabase::class.java, "Tasks"
         ).build()
         val pos = intent.getIntExtra("id", -1)
         if (pos != -1) {
@@ -28,6 +29,7 @@ class UpdateCard : AppCompatActivity() {
             create_title.setText(title)
             create_priority.setText(priority)
 
+
             delete_button.setOnClickListener {
                 DataObject.deleteData(pos)
                 GlobalScope.launch {
@@ -36,6 +38,7 @@ class UpdateCard : AppCompatActivity() {
                             pos + 1,
                             create_title.text.toString(),
                             create_priority.text.toString(),
+                            done = true
                         )
                     )
                 }
@@ -46,13 +49,15 @@ class UpdateCard : AppCompatActivity() {
                 DataObject.updateData(
                     pos,
                     create_title.text.toString(),
-                    create_priority.text.toString()
+                    create_priority.text.toString(),
+                    done = false
                 )
                 GlobalScope.launch {
                     database.dao().updateTask(
                         Entity(
                             pos + 1, create_title.text.toString(),
                             create_priority.text.toString(),
+                            done = false
                         )
                     )
                 }

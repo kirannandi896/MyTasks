@@ -1,10 +1,13 @@
 package com.example.mytasks
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.LinearLayout
+import android.widget.Switch
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -23,10 +26,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         database = Room.databaseBuilder(
-            applicationContext, myDatabase::class.java, "To_Do"
+            applicationContext, myDatabase::class.java, "Tasks"
         ).build()
         val add = findViewById<Button>(R.id.add)
         val deleteAll = findViewById<Button>(R.id.deleteAll)
+        val switch = findViewById<Switch>(R.id.themechanger)
+        val back = findViewById<LinearLayout>(R.id.mall_back)
+
+        switch.setOnClickListener{
+            if(switch.isChecked){
+                back.setBackgroundColor(Color.parseColor("#FF000000"))
+            }
+            else{
+                back.setBackgroundColor(Color.parseColor("#C9CDF3"))
+            }
+        }
+
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
@@ -48,6 +63,8 @@ class MainActivity : AppCompatActivity() {
         recycler_view.adapter = Adapter(DataObject.getAllData())
         recycler_view.layoutManager = LinearLayoutManager(this)
     }
+
+
 
 
 }
