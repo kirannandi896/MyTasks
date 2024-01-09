@@ -6,4 +6,11 @@
     <color name="low">#7AD393</color>
     <color name="medium">#E8C47C</color>
     <color name="Check">#8A8585</color>
+    <color name="back">#C9CDF3</color>
+    <color name="header">#6750A3</color>
+    <color name="delete">#DF764C</color>
+    <color name="layer">#22FFFFFF</color>
+    <color name="hinttext">#292626</color>
+    <color name="night">#180730</color>
+    <color name="pink">#D25BF3</color>
 </resources>

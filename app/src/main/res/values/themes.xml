@@ -2,8 +2,18 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyTasks" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/header</item>
+        <item name="colorPrimaryVariant">@color/back</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/header</item>
+        <item name="colorSecondaryVariant">@color/header</item>
+        <item name="colorOnSecondary">@color/black</item>
     </style>
-
+    <style name="ScreenBackground"><item name="android:background">@color/back</item></style>
+    <style name="TextColor"><item name="android:textColor">@color/header</item></style>
+    <style name="header"><item name="android:background">@color/header</item></style>
+    <style name="inputText"><item name="android:src">@drawable/custom_edittetext</item></style>
+    <style name="hintText"><item name="android:color">@color/hinttext</item></style>
     <style name="Theme.MyTasks" parent="Base.Theme.MyTasks" />
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C9CDF3"
+    style="@style/ScreenBackground"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Update Task"
-        android:textColor="#270485"
+        style="@style/TextColor"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -28,8 +28,8 @@
         android:background="@drawable/custom_edittetext"
         android:hint="Enter Task"
         android:padding="15dp"
-        android:textColor="@color/black"
-        android:textColorHint="#292626" />
+        style="@style/TextColor"
+        android:textColorHint="@color/hinttext" />
 
     <EditText
         android:id="@+id/create_priority"
@@ -39,8 +39,85 @@
         android:background="@drawable/custom_edittetext"
         android:hint="Priority"
         android:padding="15dp"
-        android:textColor="@color/black"
-        android:textColorHint="#292626" />
+        style="@style/TextColor"
+        android:textColorHint="@color/hinttext" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/create_fromTime"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/custom_edittetext"
+            android:ems="10"
+            android:hint="From Time"
+            android:inputType="time"
+            android:padding="15dp"
+            style="@style/TextColor"
+            android:textColorHint="@color/hinttext" />
+
+        <EditText
+            android:id="@+id/create_toTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittetext"
+            android:ems="10"
+            android:hint="To Time"
+            android:inputType="time"
+            android:padding="15dp"
+            style="@style/TextColor"
+            android:textColorHint="@color/hinttext" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/create_fromDate"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/custom_edittetext"
+            android:ems="10"
+            android:hint="From Date"
+            android:inputType="date"
+            android:padding="15dp"
+            style="@style/TextColor"
+            android:textColorHint="@color/hinttext" />
+
+        <EditText
+            android:id="@+id/create_toDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittetext"
+            android:ems="10"
+            android:hint="To Date"
+            android:inputType="date"
+            android:padding="15dp"
+            style="@style/TextColor"
+            android:textColorHint="@color/hinttext" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Delete Task"
+        android:textColor="@color/delete"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="250dp"
@@ -59,12 +136,13 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/delete_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF5722"
-            android:text="Delete" />
+        <CheckBox
+            android:id="@+id/markdone"
+            android:layout_width="138dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonbackground"
+            android:text="Mark as done"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

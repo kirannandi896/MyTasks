@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C9CDF3"
+    style="@style/ScreenBackground"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,50 +14,116 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="0dp"
-        android:background="#6750A3"
+        android:background="@color/header"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="252dp"
+            android:layout_width="202dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif"
-            android:text="MyTasks"
-            android:textColor="#FDFDFD"
+            android:text="@string/mytasks"
+            android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold" />
 
+        <ImageButton
+            android:id="@+id/searchbtn"
+            android:layout_width="76dp"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:padding="100dp"
+            app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+            app:tint="#FFFFFF" />
+
         <Switch
             android:id="@+id/themechanger"
-            android:layout_width="74dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:textColor="#FFFFFF"
-            android:textOff="Dark"
-            android:textOn="Light"
-            android:textSize="10sp"
-            android:visibility="visible" />
+            android:layout_marginEnd="5dp"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"/>
 
-        <Button
-            android:id="@+id/deleteAll"
-            android:layout_width="38dp"
-            android:layout_height="29dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#FF5722"
-            android:insetLeft="-10dp"
-            android:insetTop="-10dp"
-            android:insetRight="-10dp"
-            android:insetBottom="-10dp"
-            android:text="⨉"
+<!--        <TextView-->
+<!--            android:id="@+id/deleteAll"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:background="@color/delete"-->
+<!--            android:text="⨉"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--             />-->
+
+            <Button
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/layer"
+                    android:text="Login" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="0dp"
+        android:background="@color/header"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:background="@color/layer"
+            android:gravity="center"
+            android:text="All"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/highfil"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="High" />
+
+        <TextView
+            android:id="@+id/medfil"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Medium" />
+
+        <TextView
+            android:id="@+id/lowfil"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Low" />
+
+        <TextView
+            android:id="@+id/donefil"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Done"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:iconPadding="0dp" />
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
     <FrameLayout
